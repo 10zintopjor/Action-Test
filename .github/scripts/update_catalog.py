@@ -46,4 +46,5 @@ if __name__ == "__main__":
     print("ITS WORKING")
     update_catalog()
     meta = get_meta()
+    print(meta)
 
