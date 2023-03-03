@@ -1,11 +1,11 @@
 from github import Github
 import yaml
-import sys
+import os
 
 catalog_url = "jungtop/sample_catalog"
 #catalog_url = "jungtop/sample_catalog"
 
-token = sys.argv[1]
+token = os.environ.get("GITHUB_TOKEN")
 g = Github(token)
 
 
@@ -37,6 +37,5 @@ def update_repo(g,commit_msg,updated_catalog):
     
 if __name__ == "__main__":
     print("ITS WORKING")
-    print(sys.argv)
     update_catalog()
 
