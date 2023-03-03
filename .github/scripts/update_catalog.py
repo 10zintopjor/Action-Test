@@ -37,6 +37,6 @@ def update_repo(g,commit_msg,updated_catalog):
     
 if __name__ == "__main__":
     print("ITS WORKING")
-    print()
-    update_catalog(sys.argv)
+    print(sys.argv)
+    update_catalog()
 
