@@ -10,6 +10,10 @@ g = Github(token)
 
 
 def get_catalog(g):
+    repo = g.get_repo(catalog_url)
+    contents = repo.get_contents(f"./demo.csv")
+    catalog = yaml.safe_load(contents.decoded_content.decode())
+    return catalog
     try:
         repo = g.get_repo(catalog_url)
         contents = repo.get_contents(f"./demo.csv")
