@@ -24,6 +24,8 @@ jobs:
         pip install PyGithub
         pip install pyyaml
     - name: run script
-      run: python .github/scripts/update_catalog.py
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      run: python .github/scripts/update_catalog.py repo-token
 
       
