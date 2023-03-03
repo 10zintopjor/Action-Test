@@ -1,6 +1,5 @@
 from github import Github
 import yaml
-from pathlib import Path
 import sys
 
 catalog_url = "jungtop/sample_catalog"
