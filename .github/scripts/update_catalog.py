@@ -6,11 +6,16 @@ import sys
 
 catalog_url = "jungtop/sample_catalog"
 #catalog_url = "jungtop/sample_catalog"
-meta_path = sys.argv[1]
 token = os.environ.get("GITHUB_TOKEN")
 g = Github(token)
 
 
+def get_meta():
+    repo_name = os.environ.get("repo_name")
+    meta_path = f"{repo_name}.opf/meta.yml"
+    meta = Path(meta_path).read_text()
+    return meta
+    
 def get_catalog(g):
     try:
         repo = g.get_repo(catalog_url)
@@ -39,7 +44,6 @@ def update_repo(g,commit_msg,updated_catalog):
     
 if __name__ == "__main__":
     print("ITS WORKING")
-    meta = Path(meta_path).read_text()
     update_catalog()
-    print(meta)
+    meta = get_meta()
 
