@@ -1,10 +1,12 @@
 from github import Github
+from pathlib import Path
 import yaml
 import os
+import sys
 
 catalog_url = "jungtop/sample_catalog"
 #catalog_url = "jungtop/sample_catalog"
-
+meta_path = sys.argv[1]
 token = os.environ.get("GITHUB_TOKEN")
 g = Github(token)
 
@@ -37,5 +39,7 @@ def update_repo(g,commit_msg,updated_catalog):
     
 if __name__ == "__main__":
     print("ITS WORKING")
+    meta = Path(meta_path).read_text()
     update_catalog()
+    print(meta)
 
