@@ -25,7 +25,7 @@ jobs:
       env:
         repo_name: ${{ github.event.repository.name }}
         GITHUB_TOKEN: ${{ secrets.my_token}}
-        meta_path: ${repo_name}/${repo_name}.opf/meta.yml
+        meta_path: ${repo_name}.opf/meta.yml
       run: python .github/scripts/update_catalog.py ${meta_path}
 
       
