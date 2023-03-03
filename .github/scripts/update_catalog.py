@@ -5,8 +5,8 @@ import sys
 catalog_url = "jungtop/sample_catalog"
 #catalog_url = "jungtop/sample_catalog"
 
-#token = sys.argv[1]
-#g = Github(token)
+token = sys.argv[1]
+g = Github(token)
 
 
 def get_catalog(g):
@@ -37,4 +37,5 @@ def update_repo(g,commit_msg,updated_catalog):
     
 if __name__ == "__main__":
     print("ITS WORKING")
+    update_catalog()
 
