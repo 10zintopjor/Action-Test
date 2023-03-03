@@ -22,7 +22,7 @@ def get_catalog(g):
 def update_catalog():
     commit_msg = "updated catalog"
     catalog = get_catalog(g)
-    updated_catalog +="new content"+"\n"
+    updated_catalog =catalog+"new content"+"\n"
     update_catalog(updated_catalog)
     update_repo(g,commit_msg,updated_catalog)
 
