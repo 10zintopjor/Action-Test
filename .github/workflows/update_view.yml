@@ -22,3 +22,6 @@ jobs:
     - name: Test 
       run: |
         echo "Its Working"
+    - name: Extracting issue comment
+      run: |
+        echo "${{ github.event.issue.body }}
