@@ -24,4 +24,4 @@ jobs:
         echo "Its Working"
     - name: Extracting issue comment
       run: |
-        echo "${{ github.event.issue.body }}
+        echo "${{ github.event.issue.body }}"
